@@ -1,3 +1,12 @@
+ur_hardware_interface:
+   joints: &robot_joints
+     - shoulder_pan_joint
+     - shoulder_lift_joint
+     - elbow_joint
+     - wrist_1_joint
+     - wrist_2_joint
+     - wrist_3_joint
+   
 # Joint state controller
 joint_state_controller:
   publish_rate: 125
@@ -35,6 +44,11 @@ scaled_pos_joint_traj_controller:
     wrist_3_joint:
       trajectory: 0
       goal: 0.01
+      
+# Pass an array of joint velocities directly to the joints
+joint_group_vel_controller:
+   type: velocity_controllers/JointGroupVelocityController
+   joints: *robot_joints
 
 #Position controller
 shoulder_pan_joint:
