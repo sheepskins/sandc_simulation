@@ -3,6 +3,8 @@
   <!-- Export env variable so that gazebo finds our models -->
   <env name="GAZEBO_MODEL_PATH"
        value="$(find ur3_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)" />
+  <env name="GAZEBO_MEDIA_PATH"
+       value="$(find ur3_gazebo)/models:$(optenv GAZEBO_MEDIA_PATH)" />     
   <!-- Ignore online database -->
   <env name="GAZEBO_MODEL_DATABASE_URI"
        value="/" />
