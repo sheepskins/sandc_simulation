@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ur3_gripper_cam">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ur_robot_gazebo">
     <xacro:include filename="$(find ur_gazebo)/urdf/ur_macro.xacro"/>
 
         <!--Declare arguments -->
@@ -51,8 +51,8 @@
     <!-- CAMERA-->
     <xacro:include filename="$(find ur3_gazebo)/urdf/_d435.urdf.xacro" />
 
-    <xacro:sensor_d435 parent="ee_link">
-        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <xacro:sensor_d435 parent="wrist_3_link">
+        <origin xyz="0.0 0.0 0.0" rpy="0 ${-pi/2} 0"/>
     </xacro:sensor_d435>
 
 </robot>
